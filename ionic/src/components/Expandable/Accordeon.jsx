@@ -73,16 +73,16 @@ const AccordeonWrapper = ({data}) => {
 export const AccordeonItem = ({title, url, description, author, image = undefined}) => {
     return (
         <IonItem className="listItem" button routerLink={url}>
-            <IonAvatar className="avatarImgExpand">
-                <IonImg src={image === undefined ? instructor : image}></IonImg>
-            </IonAvatar>
-            <div className="titleCard ion-padding-horizontal" >
-                <h4 className="black">
-                    <b>{author.name}</b>
-                </h4>
-                <h6 className="black"> {author.profession}</h6>
-                <p className="black" dangerouslySetInnerHTML={{__html: sanitizeHtml(description)}} />
-            </div>
+                    <IonAvatar className="avatarImgExpand">
+                        <IonImg src={image === undefined ? instructor : image} />
+                    </IonAvatar>
+                    <div className="titleCard ion-padding-horizontal" >
+                        <h4 className="black">
+                            <b>{author.name}</b>
+                        </h4>
+                        <h6 className="black"> {author.profession}</h6>
+                        <p className="black" dangerouslySetInnerHTML={{__html: sanitizeHtml(description)}} />
+                    </div>
         </IonItem>
     );
 }
