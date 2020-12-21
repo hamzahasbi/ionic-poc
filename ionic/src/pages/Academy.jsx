@@ -31,8 +31,8 @@ import {COUR_TYPE, getAcademyNodes, getAcademyTerms} from "../config/academyApi"
 import MainMenu from "../components/Menu/menu";
 import sanitizeHtml from "sanitize-html";
 import instructor from "../assets/icon/instructor.svg"
-import InfiniteScroll from "../components/InfiniteScroll";
-
+import InfiniteScroll from "../components/InfiniteScroll/InfiniteScroll";
+import AccordeonWrapper from "../components/Expandable/Accordeon"
 
 
 const Academy = () => {
@@ -189,7 +189,7 @@ const Academy = () => {
                   duration={10000}
               />
           }
-          {items.length > 0 && <Cards data={items}/>}
+          {items.length > 0 && <AccordeonWrapper data={items}/>}
           <InfiniteScroll disabled={items.length === 0} callback={handleScroll} loadingText={"Loading...."}/>
       </IonContent>
     </IonPage>
@@ -258,7 +258,6 @@ const CardAcademy = ({title, url, description, author, image = undefined}) => {
 }
 
 const Cards = ({data}) => {
-    console.log(data.length);
     return (
       <IonList>
           { data.map((item) => {

@@ -1,19 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import {
     useIonViewWillEnter,
+    IonLabel,
+    IonText,
     IonHeader,
     IonToolbar,
     IonTitle,
     IonMenuButton,
     IonSearchbar, IonContent, IonPage, IonGrid, IonRow, IonCol
 } from "@ionic/react";
+import sanitizeHtml from "sanitize-html";
 import {getAcademyById} from "../config/academyApi";
 import MainMenu from "../components/Menu/menu";
-import Loader from "../components/Loader";
+import Loader from "../components/Loader/Loader";
 import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 import getNestedValue from "get-nested-value";
-import YoutubeContainer from '../components/YoutubePlayer/YoutubeContainer';
-
+import YoutubePlayer from '../components/YoutubePlayer/YoutubePlayer'
 
 const NodeAcademy = ({match}) => {
     const [item, setItem] = useState({});
@@ -65,22 +67,22 @@ const AcademyDetail = ({node}) => {
     const thematique = getNestedValue("field_vactory_theme.name", node);
     const excerpt = getNestedValue("field_vactory_excerpt.processed", node);
     const author_about = getNestedValue("internal_user.field_vactory_instructor.about.0.value", node);
-    const meta_tags = getNestedValue("metatag_normalized", node);
     const academy_title = getNestedValue("title", node);
 
     const authorName = authorFirstName + " " + authorLastName;
     const useDisqus = getNestedValue("field_utiliser_disqus", node) !== true;
-    const video = YoutubeVideoPlayer.openVideo(videoURL);
-    console.log(video);
 
     return (
         <IonGrid>
-            <YoutubeContainer video={videoURL}/>
             <IonRow>
-                <IonCol size="6" className="ion-align-items-center">
-                </IonCol>
-                <IonCol size="6" className="ion-align-items-center">
-                    Col 2
+                <IonCol size="12" className="ion-align-items-center">
+                    <IonLabel className="detail-label">
+                        <h1>{academy_title}</h1>
+                        <h4>{authorName}</h4>
+                        <p color='dark' dangerouslySetInnerHTML={{__html: sanitizeHtml(author_about)}}>{}</p>
+                        <p dangerouslySetInnerHTML={{__html: sanitizeHtml(excerpt)}}/>
+                    </IonLabel>
+                    <YoutubePlayer videoId={videoURL}/>
                 </IonCol>
             </IonRow>
         </IonGrid>
