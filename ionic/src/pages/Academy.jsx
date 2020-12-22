@@ -30,7 +30,7 @@ import './Home.css';
 import {COUR_TYPE, getAcademyNodes, getAcademyTerms} from "../config/academyApi";
 import MainMenu from "../components/Menu/menu";
 import sanitizeHtml from "sanitize-html";
-import instructor from "../assets/icon/instructor.svg"
+import instructor from "../assets/icon/instructor.svg";
 import InfiniteScroll from "../components/InfiniteScroll/InfiniteScroll";
 import AccordeonWrapper from "../components/Expandable/Accordeon"
 

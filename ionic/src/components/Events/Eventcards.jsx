@@ -15,7 +15,7 @@ import {
     IonCard,
     IonButton
 } from '@ionic/react';
-import './Eventcards.css'
+import './Eventcards.css';
 
 
 const EventWrapper = ({data}) => {
@@ -25,10 +25,10 @@ const EventWrapper = ({data}) => {
                 {data.map((event, index) => (
                     <EventCard
                         key={index}
-                        image={}
-                        name={}
-                        date={}
-                        tag={}
+                        image={event.image}
+                        name={event.title}
+                        date={event.date}
+                        tag={event.tag}
                     />
                 ))}
             </IonContent >
@@ -38,10 +38,10 @@ const EventWrapper = ({data}) => {
 }
 
 
-const EventCard = ({image, name, date, tag, buttonLabel = 'Book', price = undefined}) => {
+export const EventCard = ({image, name, date, tag, buttonLabel = 'Book', price = null}) => {
 
     return (
-        <IonCard className="eventcard ion-card-bg eventCardLarge ion-margin-bottom" key={index}>
+        <IonCard className="eventcard ion-card-bg eventCardLarge ion-margin-bottom">
             <IonImg src={image}></IonImg>
             <IonCardContent>
                 <IonRow >
@@ -64,10 +64,10 @@ const EventCard = ({image, name, date, tag, buttonLabel = 'Book', price = undefi
                 <div className="hor-seperator"></div>
                 <IonRow>
                     <IonCol size="6"><IonBadge color="light">{tag}</IonBadge></IonCol>
-                    {price !== undefined && <IonCol size="6" className="righttext">₹ {price} </IonCol>}   
+                    {price !== null && <IonCol size="6" className="righttext">₹ {price} </IonCol>}   
                 </IonRow>
             </IonCardContent>
         </IonCard>
     );
 };
-export default Eventcards;
+export default EventWrapper;

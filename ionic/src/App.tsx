@@ -25,6 +25,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import MainMenu from "./components/Menu/menu";
 import NodeAcademy from "./pages/node-academy";
+import ListingEvents from "./pages/Events";
 
 const App: React.FC = () => (
   <IonApp>
@@ -32,6 +33,7 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         <Route path="/:lang/home" render={(props:any) => <Home {...props} />} exact={true} />
         <Route path="/:lang/academy" render={(props:any) => <Academy {...props} />} exact={true} />
+        <Route path="/:lang/events" render={(props:any) => <ListingEvents {...props} />} exact={true} />
         <Route path="/:lang/academy/:id" render={(props:any) => <NodeAcademy {...props} language='fr'  />} />
         <Route exact path="/" render={() => <Redirect to="/fr/academy" />} />
       </IonRouterOutlet>
