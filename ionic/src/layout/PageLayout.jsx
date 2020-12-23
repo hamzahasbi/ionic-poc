@@ -8,11 +8,14 @@ import {
     IonTitle,
     IonSearchbar
 } from '@ionic/react';
+import MainMenu from "../components/Menu/menu";
 
-const PageLayout = () => {
+
+const PageLayout = (props) => {
 
     return (
         <IonPage>
+            <MainMenu/>
             <IonHeader>
                 <IonToolbar>
                     <IonTitle size="large">
@@ -23,9 +26,7 @@ const PageLayout = () => {
                     <IonSearchbar/>
                 </IonToolbar>
             </IonHeader>
-            <IonContent fullscreen>
-                {children}
-            </IonContent>
+            {props.children}
     </IonPage>
     );
 }

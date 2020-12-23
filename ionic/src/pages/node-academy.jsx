@@ -16,6 +16,7 @@ import Loader from "../components/Loader/Loader";
 import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 import getNestedValue from "get-nested-value";
 import YoutubePlayer from '../components/YoutubePlayer/YoutubePlayer'
+import PageLayout from '../layout/PageLayout'; 
 
 const NodeAcademy = ({match}) => {
     const [item, setItem] = useState({});
@@ -32,18 +33,7 @@ const NodeAcademy = ({match}) => {
     });
 
     return (
-        <IonPage>
-            {/*<MainMenu/>*/}
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle size="large">
-                        <IonMenuButton menu="first" autoHide={false}/>
-                    </IonTitle>
-                </IonToolbar>
-                <IonToolbar>
-                    <IonSearchbar/>
-                </IonToolbar>
-            </IonHeader>
+        <PageLayout>
             <IonContent fullscreen>
                 {isLoading && <Loader
                     callback={() => setIsLoading(false)}
@@ -51,7 +41,8 @@ const NodeAcademy = ({match}) => {
                 }
                 {!isLoading && <AcademyDetail node={item}/>}
             </IonContent>
-        </IonPage>
+        </PageLayout>
+
     );
 }
 
