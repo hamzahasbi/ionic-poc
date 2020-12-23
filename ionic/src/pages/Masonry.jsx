@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {events} from '../config/mocData';
+import {MasonryMoc} from '../config/mocData';
 import {
     IonContent,
     IonHeader,
@@ -10,9 +10,9 @@ import {
     IonSearchbar
 } from '@ionic/react';
 import Loader from '../components/Loader/Loader';
-import EventWrapper from '../components/Events/Eventcards';
+import MasonryWrapper from '../components/Masonry/MasonryGrid';
 
-const ListingEvents = () => {
+const MasonryListing = ({match}) => {
 
     const [isLoading, setIsLoading] = useState(false);
     return (
@@ -32,10 +32,10 @@ const ListingEvents = () => {
                     callback={() => setIsLoading(false)}
                     isOpen={isLoading} message={"Chargement..."}/>
                 }
-                {!isLoading && <EventWrapper data={events} />}
+                {!isLoading && <MasonryWrapper data={MasonryMoc} />}
             </IonContent>
     </IonPage>
     );
 }
 
-export default ListingEvents;
+export default MasonryListing;

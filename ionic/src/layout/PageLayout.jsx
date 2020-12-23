@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import {events} from '../config/mocData';
+import React from 'react';
 import {
     IonContent,
     IonHeader,
@@ -9,12 +8,9 @@ import {
     IonTitle,
     IonSearchbar
 } from '@ionic/react';
-import Loader from '../components/Loader/Loader';
-import EventWrapper from '../components/Events/Eventcards';
 
-const ListingEvents = () => {
+const PageLayout = () => {
 
-    const [isLoading, setIsLoading] = useState(false);
     return (
         <IonPage>
             <IonHeader>
@@ -28,14 +24,10 @@ const ListingEvents = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
-                {isLoading && <Loader
-                    callback={() => setIsLoading(false)}
-                    isOpen={isLoading} message={"Chargement..."}/>
-                }
-                {!isLoading && <EventWrapper data={events} />}
+                {children}
             </IonContent>
     </IonPage>
     );
 }
 
-export default ListingEvents;
+export default PageLayout;
