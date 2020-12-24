@@ -1,0 +1,13 @@
+dist: precise
+language: node_js
+node_js:
+  - node
+jobs:
+  fast_finish: true
+  before_install:
+    - "npm -g install ionic"
+    - cd ./ionic/
+  install: 
+    - npm install
+  script:
+    - ionic serve
