@@ -1,25 +1,12 @@
 import {
     IonButton,
     IonContent,
-    IonThumbnail,
-    IonHeader,
-    IonMenuButton,
-    IonPage,
-    IonSearchbar,
-    IonTitle,
-    IonToolbar,
     IonItem,
     IonLabel,
     IonList,
     IonSelect,
     IonSelectOption,
-    IonItemDivider,
     IonLoading,
-    IonText,
-    IonCard,
-    IonCardHeader,
-    IonCardTitle,
-    IonCardContent,
     IonRippleEffect,
     useIonViewWillEnter,
     IonSegment,
@@ -33,6 +20,8 @@ import sanitizeHtml from "sanitize-html";
 import instructor from "../assets/icon/instructor.svg";
 import InfiniteScroll from "../components/InfiniteScroll/InfiniteScroll";
 import AccordeonWrapper from "../components/Expandable/Accordeon"
+import PageLayout from "../layout/PageLayout";
+import {GetLocale} from "../config/language";
 
 
 const Academy = () => {
@@ -60,7 +49,7 @@ const Academy = () => {
     const [selectedType, setSelectedType] = useState(COUR_TYPE.EN_REPLAY);
     const [offset, setOffset] = useState(0);
     const [pageNumber, setPageNumber] = useState(0)
-    const currentLanguage = 'fr';
+    const [currentLanguage, setCurrentLanguage] = 'fr';
     const handleChange = (tid) => {
         setItems([]);
         setOffset(0);
@@ -101,7 +90,6 @@ const Academy = () => {
             </section>
         );
     }
-
     const SegmentFilter = ({buttons}) => {
         return (
             <section>
@@ -145,6 +133,7 @@ const Academy = () => {
             console.log(e)
         })
     }
+
     useIonViewWillEnter(() => {
         getAcademyTerms(currentLanguage).then(data => {
             const terms = data.data.map(el => {
@@ -157,42 +146,39 @@ const Academy = () => {
         }).catch(e => {
             console.log(e);
         });
-    })
+        const fnc = async () => {
+            const lng = await GetLocale();
+            return lng;
+        }
+        console.log(fnc);
+    });
+
     useEffect(() => {
         setIsLoading(true);
         fetchData();
     }, [selectedTerm, offset, selectedType]); // eslint-disable-line react-hooks/exhaustive-deps
-  return (
-    <IonPage>
-        <MainMenu/>
-        <IonHeader>
-            <IonToolbar>
-                <IonTitle size="large">
-                    <IonMenuButton menu="first" autoHide={false}/>
-                </IonTitle>
-            </IonToolbar>
-            <IonToolbar>
-                <IonSearchbar/>
-            </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-          <SelectFilters filters={filters} selectedTerm={selectedTerm} handleChange={handleChange}/>
-          <ButtonFilter buttons={types} />
-          {/*<SegmentFilter buttons={types}/>*/}
-          {isLoading  &&
-              <IonLoading
-                  cssClass='custom-loader'
-                  isOpen={isLoading}
-                  onDidDismiss={() => setIsLoading(false)}
-                  translucent={true}
-                  message={'Chargement...'}
-                  duration={10000}
-              />
-          }
-          {items.length > 0 && <AccordeonWrapper data={items}/>}
-          <InfiniteScroll disabled={items.length === 0} callback={handleScroll} loadingText={"Loading...."}/>
-      </IonContent>
-    </IonPage>
+    
+    
+    return (
+        <PageLayout title={"Academy"} >
+        <IonContent fullscreen>
+            <SelectFilters filters={filters} selectedTerm={selectedTerm} handleChange={handleChange}/>
+            <ButtonFilter buttons={types} />
+            {/*<SegmentFilter buttons={types}/>*/}
+            {isLoading  &&
+                <IonLoading
+                    cssClass='custom-loader'
+                    isOpen={isLoading}
+                    onDidDismiss={() => setIsLoading(false)}
+                    translucent={true}
+                    message={'Chargement...'}
+                    duration={10000}
+                />
+            }
+            {items.length > 0 && <AccordeonWrapper data={items}/>}
+            <InfiniteScroll disabled={items.length === 0} callback={handleScroll} loadingText={"Loading...."}/>
+        </IonContent>
+        </PageLayout>
   );
 };
 
@@ -227,59 +213,6 @@ const SelectFilters = ({filters, handleChange, selectedTerm}) => {
 
         </IonList>
     );
-};
-
-const CardAcademy = ({title, url, description, author, image = undefined}) => {
-    return (
-            <IonCard button={true} href={url}>
-                <IonCardHeader>
-                    {/*<IonCardSubtitle>Card Subtitle</IonCardSubtitle>*/}
-                    <IonCardTitle>{title}</IonCardTitle>
-                </IonCardHeader>
-
-
-                <IonCardContent >
-                    <IonText>
-                        <p dangerouslySetInnerHTML={{__html: sanitizeHtml(description)}}/>
-                    </IonText>
-                    <IonItem>
-                        <IonThumbnail slot="start">
-                            <img src={image === undefined ? instructor : image} alt="instructor thumbnail"/>
-                        </IonThumbnail>
-                        <IonLabel>
-                            <h2>{author.name}</h2>
-                        </IonLabel>
-                    </IonItem>
-
-                </IonCardContent>
-            </IonCard>
-
-    );
-}
-
-const Cards = ({data}) => {
-    return (
-      <IonList>
-          { data.map((item) => {
-              const author = {
-                  description: item.internal_user.field_vactory_instructor.about[0].value,
-                  name: `${item.internal_user.field_vactory_instructor.first_name} ${item.internal_user.field_vactory_instructor.last_name}`,
-                  profession: item.internal_user.field_vactory_instructor.profession,
-                  picture: item.internal_user.field_vactory_instructor.picture,
-              };
-              return (
-                  <IonItemDivider  key={item.drupal_internal__nid}>
-                      <CardAcademy author={author}
-                                   title={item.title}
-                                   description={item.field_vactory_excerpt.value}
-                                   url={`/${item.langcode}/academy/${item.drupal_internal__nid}`}
-                                   image={author.picture !== null ? author.picture._default : undefined}
-                      />
-                  </IonItemDivider>
-              )
-          })}
-      </IonList>
-      )
 };
 
 export default Academy;

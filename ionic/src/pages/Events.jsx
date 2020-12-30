@@ -11,22 +11,15 @@ import {
 } from '@ionic/react';
 import Loader from '../components/Loader/Loader';
 import EventWrapper from '../components/Events/Eventcards';
+import PageLayout from '../layout/PageLayout';
+
 
 const ListingEvents = () => {
 
     const [isLoading, setIsLoading] = useState(false);
     return (
-        <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle size="large">
-                        <IonMenuButton menu="first" autoHide={false}/>
-                    </IonTitle>
-                </IonToolbar>
-                <IonToolbar>
-                    <IonSearchbar/>
-                </IonToolbar>
-            </IonHeader>
+        <PageLayout title={"Evenements"}>
+            
             <IonContent fullscreen>
                 {isLoading && <Loader
                     callback={() => setIsLoading(false)}
@@ -34,7 +27,7 @@ const ListingEvents = () => {
                 }
                 {!isLoading && <EventWrapper data={events} />}
             </IonContent>
-    </IonPage>
+        </PageLayout>
     );
 }
 

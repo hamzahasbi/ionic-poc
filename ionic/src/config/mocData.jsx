@@ -26,3 +26,16 @@ export const MasonryMoc = [{ image: event, title: '7 Places to be in Hyderabad T
 { image: event, title: '7 Places to be in Paris This New Year eve' },
 { image: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Eiffel_Tower_Vertical.JPG', title: '7 Places to be in Shanghai This New Year eve' },
 { image: event, title: '7 Places to be in Tokyo This New Year eve' }];
+
+const SubAcademy = [
+    {title: 'Academy Expendable', url: '/fr/academy', below: undefined},
+    {title: 'Academy Cards', url: '/fr/academy-cards', below: undefined},
+];
+
+
+export const MenuData = [
+    {title: 'Academy Listing', url: '', below: SubAcademy},
+    {title: 'Masonry Listing', url: '/fr/masonry', below: undefined},
+    {title: 'Events Listing', url: '/fr/events', below: undefined},
+];
+
