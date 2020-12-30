@@ -1,33 +1,28 @@
 import React , {useState} from 'react';
-import getMenu from '../../config/menuApi';
 import {
     IonMenu,
     IonHeader,
     IonToolbar,
     IonMenuToggle,
     IonIcon,
-    IonTitle,
+    IonImg,
     IonContent,
     IonList,
     IonItem,
     IonRouterOutlet,
-    IonLabel, IonMenuButton, useIonViewWillEnter, IonBackButton, IonButton
+    IonLabel, IonButton
 } from '@ionic/react';
-
+import { withRouter } from 'react-router-dom';
 import {apps, camera} from 'ionicons/icons';
 import './Menu.css';
+import {MenuData} from '../../config/mocData';
+import logo from "../../assets/icon/logoDam.png";
+
 
 
 const MainMenu = () => {
-    const [items, setItems] = useState([]);
+    const items = MenuData;
     const [isOpen, setIsOpen] = useState(false);
-    useIonViewWillEnter(() => {
-        getMenu().main.then(data => {
-            setItems(data[0].items)
-        }).catch(e => {
-            console.log(e)
-        })
-    }, []);
 
     const MenuItem = ({label, link, submenu}) => {
         if(submenu !== undefined) {
@@ -62,15 +57,14 @@ const MainMenu = () => {
     }
     return (
         <>
-
             <IonMenu side="start" menuId="first" contentId="main">
                 <IonHeader className="head">
                         <div className="enappd-header">
                             <div className="logoImage">
-                                Menu
+                                <IonImg src={logo}></IonImg>
                             </div>
                             <div className="titleHeader">
-                                Menu
+                                Mobile Factory
                             </div>
                         </div>
                     </IonHeader>
@@ -83,4 +77,4 @@ const MainMenu = () => {
     );
 }
 
-export default MainMenu;
+export default withRouter(MainMenu);

@@ -7,9 +7,7 @@ import {
     IonListHeader,
     IonList, IonCardHeader, IonCardTitle, IonCardContent, IonText, IonCard, IonItemDivider, IonThumbnail
 } from '@ionic/react';
-import '../pages/Home.css';
-import sanitizeHtml from "sanitize-html";
-import instructor from "../assets/icon/instructor.svg";
+import '../../pages/Home.css';
 
 export const SkeletonList = () => {
     return (
