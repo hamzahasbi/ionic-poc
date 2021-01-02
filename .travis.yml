@@ -1,4 +1,5 @@
-dist: precise
+dist: bionic
+os: linux
 language: node_js
 node_js:
   - node
@@ -6,11 +7,11 @@ cache:
   - yarn
   - directories:
       - node_modules
-fast_finish: true
+matrix:
+  fast_finish: true
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.*
   - export PATH="$HOME/.yarn/bin:$PATH"
-  - npm config set spin false
   - cd ./ionic/
 install: 
   - npm install -g ionic
