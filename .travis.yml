@@ -2,18 +2,19 @@ dist: precise
 language: node_js
 node_js:
   - node
-
 cache:
-  directories:
-    - node_modules
-jobs:
-  fast_finish: true
-  before_install:
-    - "npm config set spin false"
-    - "npm install -g npm"
-    - "npm install -g ionic"
-    - cd ./ionic/
-  install: 
-    - npm install
-  script:
-    - ionic serve
+  - yarn
+  - directories:
+      - node_modules
+fast_finish: true
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.22.*
+  - export PATH="$HOME/.yarn/bin:$PATH"
+  - npm config set spin false
+  - cd ./ionic/
+install: 
+  - npm install -g ionic
+  - yarn install
+script:
+  - yarn run test
+  - yarn run build
