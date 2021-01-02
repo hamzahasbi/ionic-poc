@@ -49,7 +49,7 @@ const Academy = () => {
     const [selectedType, setSelectedType] = useState(COUR_TYPE.EN_REPLAY);
     const [offset, setOffset] = useState(0);
     const [pageNumber, setPageNumber] = useState(0)
-    const [currentLanguage, setCurrentLanguage] = 'fr';
+    const [currentLanguage, setCurrentLanguage] = useState('fr');
     const handleChange = (tid) => {
         setItems([]);
         setOffset(0);
@@ -148,9 +148,9 @@ const Academy = () => {
         });
         const fnc = async () => {
             const lng = await GetLocale();
+            console.log(lng);
             return lng;
         }
-        console.log(fnc);
     });
 
     useEffect(() => {

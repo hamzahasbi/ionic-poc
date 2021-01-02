@@ -27,10 +27,12 @@ import AcademyCards from "./pages/academy-cards";
 import NodeAcademy from "./pages/node-academy";
 import ListingEvents from "./pages/Events";
 import MasonryListing from "./pages/Masonry";
+import PageLayout from './layout/PageLayout';
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
+    <PageLayout>
       <IonRouterOutlet>
         <Route path="/:lang/home" render={(props:any) => <Home {...props} />} exact={true} />
         <Route path="/:lang/academy" render={(props:any) => <Academy {...props} />} exact={true} />
@@ -40,7 +42,10 @@ const App: React.FC = () => (
         <Route path="/:lang/academy/:id" render={(props:any) => <NodeAcademy {...props} language='fr'  />} />
         <Route exact path="/" render={() => <Redirect to="/fr/academy" />} />
       </IonRouterOutlet>
-    </IonReactRouter>
+      </PageLayout>
+
+    </IonReactRouter> 
+
   </IonApp>
 );
 

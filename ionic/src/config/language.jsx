@@ -2,10 +2,11 @@ import { Globalization } from '@ionic-native/globalization';
 import { isPlatform } from '@ionic/react';
 
 
+
 export const GetLocale = async () => {
     let langcode = 'en-US';
     if (isPlatform('cordova') || isPlatform('capacitor')) {
-        langcode = (await Globalization.getPreferredLanguage()).value;
+        langcode = await (Globalization.getPreferredLanguage()).value;
     } else {
         langcode = navigator.language; // web.
     }

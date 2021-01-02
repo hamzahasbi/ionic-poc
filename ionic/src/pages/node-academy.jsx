@@ -33,7 +33,6 @@ const NodeAcademy = ({match}) => {
     });
 
     return (
-        <PageLayout title={"Formation"}>
             <IonContent fullscreen>
                 {isLoading && <Loader
                     callback={() => setIsLoading(false)}
@@ -41,8 +40,6 @@ const NodeAcademy = ({match}) => {
                 }
                 {!isLoading && <AcademyDetail node={item}/>}
             </IonContent>
-        </PageLayout>
-
     );
 }
 
