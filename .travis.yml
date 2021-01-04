@@ -15,7 +15,7 @@ before_install:
   - cd ./ionic/
 install: 
   - npm install -g ionic
-  - yarn install
+  - yarn install --production --silent
 script:
   - yarn run test
   - yarn run build
