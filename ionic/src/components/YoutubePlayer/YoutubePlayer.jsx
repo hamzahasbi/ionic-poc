@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
-import { YoutubePlayerWeb } from 'capacitor-youtube-player';
+import {
+  YoutubePlayerWeb,
+  YoutubePlayerPlugin,
+} from 'capacitor-youtube-player';
 import { Plugins, Capacitor } from '@capacitor/core';
 import './YoutubePlayerStyles.css';
 
@@ -24,8 +27,13 @@ const YoutubePlayer = ({ videoId }) => {
     }
 
     async function initializeYoutubePlayerPluginNative() {
-      const options = { width: 640, height: 360, videoId: videoId };
-      const result = await YoutubePlayer.initialize(options);
+      const options = {
+        width: 640,
+        height: 360,
+        videoId: videoId,
+        playerId: 'youtube-player',
+      };
+      const result = await YoutubePlayerPlugin.initialize(options);
     }
 
     if (Capacitor.platform === 'web') {
@@ -39,6 +47,7 @@ const YoutubePlayer = ({ videoId }) => {
   return (
     <div>
       <header>
+        <h1>Welcome to Your React.js + TypeScript + Capacitor App</h1>
         {/* The <iframe> (and video player) will replace this <div> tag. */}
         <div id="youtube-player"></div>
       </header>
