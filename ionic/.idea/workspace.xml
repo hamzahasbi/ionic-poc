@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7f131cd1-23df-4b2c-a2ff-6a064407fe1d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../mobile/config/env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/config/getHttpsConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/config/jest/cssTransform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/config/jest/fileTransform.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/config/modules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/config/paths.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/config/pnpTs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/config/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/config/webpackDevServer.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/scripts/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/scripts/start.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mobile/scripts/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/.env.development" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/.env.development" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/layout/header/HeaderTop/HeaderAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/layout/header/HeaderTop/HeaderAuth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobile/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobile/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../mobile/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="ProjectId" id="1km9eO5s33CiPHG7vyROTPUqBNJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="15.3.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.10" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/icon" />
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="renders without crashing" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/App.test.tsx" />
+      <test-names>
+        <test-name value="renders without crashing" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.renders without crashing" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f131cd1-23df-4b2c-a2ff-6a064407fe1d" name="Default Changelist" comment="" />
+      <created>1606294993701</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606294993701</updated>
+      <workItem from="1606294995197" duration="15948000" />
+      <workItem from="1606465818183" duration="385000" />
+      <workItem from="1606466337833" duration="6237000" />
+      <workItem from="1606725207416" duration="10224000" />
+      <workItem from="1606812768154" duration="1727000" />
+      <workItem from="1606815549989" duration="1261000" />
+      <workItem from="1606817117220" duration="4813000" />
+      <workItem from="1606985300553" duration="202000" />
+      <workItem from="1606985624229" duration="2708000" />
+      <workItem from="1607002261643" duration="10722000" />
+      <workItem from="1607088377230" duration="6201000" />
+      <workItem from="1607166015556" duration="1565000" />
+      <workItem from="1607348883535" duration="2758000" />
+      <workItem from="1607421445838" duration="5653000" />
+      <workItem from="1607512222016" duration="3823000" />
+      <workItem from="1607528067485" duration="20000" />
+      <workItem from="1607530048872" duration="2945000" />
+      <workItem from="1607590835873" duration="1502000" />
+      <workItem from="1607677279905" duration="3064000" />
+      <workItem from="1607693531694" duration="7219000" />
+      <workItem from="1607788400378" duration="6157000" />
+      <workItem from="1607871501959" duration="125000" />
+      <workItem from="1607871685598" duration="9309000" />
+      <workItem from="1607936033485" duration="316000" />
+      <workItem from="1607941193993" duration="111000" />
+      <workItem from="1607954710467" duration="1462000" />
+      <workItem from="1608108028775" duration="321000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

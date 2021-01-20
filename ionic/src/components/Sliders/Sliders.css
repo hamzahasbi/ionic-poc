@@ -1,0 +1,224 @@
+
+.content-bg {
+  --background: #eaeaea;
+}
+ion-slide .product-row {
+  margin-bottom: 0px;
+}
+.sliderSection {
+  background: #eaeaea;
+}
+.title {
+  padding-left: 0;
+  padding-top: 0;
+}
+
+.cardSection {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-top: 8px;
+}
+.cardSection ion-card-content {
+  padding: 16px 5px;
+  width: 100%;
+}
+.cardSection img {
+  width: 75%;
+}
+.contentTextSlider {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4e4343;
+}
+.rowSection {
+  width: 100%;
+  padding-top: 5px;
+}
+
+.priceParentSection {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.discountSection {
+  background: #15bf15;
+  color: #fff;
+  border-radius: 3px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  padding: 0 5px;
+  align-items: center;
+}
+
+.regularPriceSection {
+  text-decoration: line-through;
+}
+
+.colSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.salesCount {
+  font-size: 10px;
+}
+
+.PriceSection {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 16px;
+  padding-left: 8px;
+}
+
+.heartIcon-slider {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 20px;
+}
+
+.heart {
+  color: #d4cccc;
+}
+
+.heartRed {
+  color: #ff0000;
+}
+
+.productTypeText {
+  font-size: 14px;
+}
+
+.swiper-zoom-container {
+  width: 100vw !important;
+}
+.swiper-wrapper {
+  width: 100vw !important;
+}
+.imageDiv {
+  height: 200px;
+  justify-content: center;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  min-width: 100vw;
+  font-size: 30px;
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.widthFullCard {
+  width: 100%;
+  margin: 0 10px;
+  padding-bottom: 0;
+}
+ion-slide {
+  margin-bottom: 35px;
+}
+.contentTextSmall {
+  font-size: 12px;
+  font-weight: bold;
+  color: #4e4343;
+  max-height: 48px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 16px;
+  display: block;
+}
+.titleProduct {
+  padding-left: 0;
+  padding-top: 0;
+}
+
+.cardSectionProducts {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 10px !important;
+}
+.cardSection img {
+  width: 75%;
+}
+
+.cardSection ion-card-content {
+  padding: 16px 5px;
+  width: 100%;
+}
+.contentText-productsStyle {
+  font-size: 14px;
+  font-weight: bold;
+  color: #4e4343;
+}
+.rowSectionProducts {
+  width: 100%;
+  padding-top: 5px;
+}
+
+.priceParentSectionProducts {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.discountSectionProducts {
+  background: #15bf15;
+  color: #fff;
+  border-radius: 3px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  padding: 0 5px;
+  align-items: center;
+}
+
+.regularPriceSectionProducts {
+  text-decoration: line-through;
+}
+
+.colSectionProducts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.salesCountProducts {
+  font-size: 10px;
+}
+
+.PriceSectionProd {
+  color: #ff0000;
+  font-weight: bold;
+  font-size: 16px;
+  padding-left: 8px;
+}
+
+.heartIconProducts {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 20px;
+}
+
+.heartRed {
+  color: #ff0000;
+}
+
+.productTypeText {
+  font-size: 14px;
+}
+.textLeftStyle {
+  text-align: left;
+}

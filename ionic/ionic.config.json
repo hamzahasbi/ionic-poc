@@ -1,0 +1,7 @@
+{
+  "name": "damMobileApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

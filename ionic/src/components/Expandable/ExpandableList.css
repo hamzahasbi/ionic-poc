@@ -1,0 +1,101 @@
+/*
+* Ionic React Capacitor Full App (https://store.enappd.com/product/ionic-react-full-app-capacitor/)
+*
+* Copyright © 2019-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+.btn-title {
+    width: 100%;
+    display: flex;
+    font-size: 24px;
+}
+
+.div {
+    margin-top: 100px;
+    padding: 0px;
+}
+
+.avatarImgExpand {
+    width: 45;
+    height: 45;
+}
+.listItem {
+    margin-bottom: 15px;
+}
+.LAbelHeightExpandable {
+    height: auto !important;
+}
+
+.icon {
+    position: absolute;
+    left: 15px;
+    bottom: 17px;
+    font-size: x-large;
+}
+
+/* .list-md,.list-ios {
+        margin: 0 !important;
+        padding: 0px 0 !important;
+        background: transparent !important;
+        margin-bottom: 10px !important;
+        
+    } */
+
+p {
+    color: black !important;
+}
+
+.endItem {
+    right: 16px !important;
+    position: absolute !important;
+    color: white;
+}
+
+.active {
+    background: rgba(0, 0, 0, 0.4117647058823529);
+    color: #fff;
+}
+
+.titleCard {
+    margin-left: 10px;
+}
+
+h4,
+h6 {
+    margin: 2px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.flex {
+    display: flex;
+    -webkit-margin-start: 0px !important;
+    margin-inline-start: 0px !important;
+    -webkit-margin-end: 0px !important;
+    margin-inline-end: 0px !important;
+}
+
+.ion-button-css {
+    --background: transparent;
+    --box-shadow: none;
+    --background-activated: #f5f6f900;
+    --background-focused: #3171e000;
+}
+
+.accordionList {
+    height: 100%;
+    background: #00000008;
+    margin: 0 !important;
+    padding: 0px 0 !important;
+    background: transparent !important;
+    margin-bottom: 10px !important;
+}

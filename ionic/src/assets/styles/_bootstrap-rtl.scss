@@ -1,0 +1,76 @@
+html[dir=rtl] {
+
+  @mixin make-col-offset($size, $columns: $grid-columns) {
+    $num: $size / $columns;
+    margin-right: if($num == 0, 0, percentage($num));
+    margin-left: 0;
+  }
+
+  @mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+    @each $breakpoint in map-keys($breakpoints) {
+      $infix: breakpoint-infix($breakpoint, $breakpoints);
+      @include media-breakpoint-up($breakpoint, $breakpoints) {
+        @for $i from 0 through ($columns - 1) {
+          @if not ($infix == "" and $i == 0) {
+            .offset#{$infix}-#{$i} {
+              @include make-col-offset($i, $columns);
+            }
+          }
+        }
+      }
+    }
+  }
+  @if $enable-grid-classes {
+    @include make-grid-columns();
+  }
+
+  // stylelint-disable declaration-no-important
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      @each $prop, $abbrev in (margin: m, padding: p) {
+        @each $size, $length in $spacers {
+
+          .#{$abbrev}r#{$infix}-#{$size},
+          .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-right: 0 !important;
+            #{$prop}-left: $length !important;
+          }
+          .#{$abbrev}l#{$infix}-#{$size},
+          .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-left: 0 !important;
+            #{$prop}-right: $length !important;
+          }
+        }
+      }
+
+      .mr#{$infix}-auto {
+        margin-right: 0 !important;
+        margin-left: auto !important;
+      }
+      .ml#{$infix}-auto {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+      }
+      .mx#{$infix}-auto {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+    }
+  }
+
+  // Responsive alignment
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+      .text#{$infix}-left   { text-align: right !important; }
+      .text#{$infix}-right  { text-align: left !important; }
+
+      .float#{$infix}-left   { float: right !important; }
+      .float#{$infix}-right  { float: left !important; }
+    }
+  }
+
+}
